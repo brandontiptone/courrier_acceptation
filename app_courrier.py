@@ -66,10 +66,10 @@ st.header("📝 Informations du dossier")
 col1, col2 = st.columns(2)
 with col1:
     date_dossier = st.date_input("Date de création du dossier", value=datetime.today())
-    prime = st.number_input("Prime à l'investissement (€)", min_value=0, value=0, step=100)
+    prime = st.number_input("Prime à l'investissement (€)", min_value=0.0, value=0.0, step=0.01, format="%.2f")
 with col2:
     adresse = st.text_input("Adresse complète", placeholder="Ex : 12 rue des Lilas, 87000 Limoges")
-    tva = st.number_input("Récupération de TVA (€)", min_value=0, value=0, step=100)
+    tva = st.number_input("Récupération de TVA (€)", min_value=0.0, value=0.0, step=0.01, format="%.2f")
 
 subvention = prime + tva
 st.info(f"💰 Subvention globale calculée automatiquement : **{subvention:,.0f} €** (Prime + TVA)".replace(",", " "))
