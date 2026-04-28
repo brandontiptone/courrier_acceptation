@@ -72,7 +72,7 @@ with col2:
     tva = st.number_input("Récupération de TVA (€)", min_value=0.0, value=0.0, step=0.01, format="%.2f")
 
 subvention = prime + tva
-st.info(f"💰 Subvention globale calculée automatiquement : **{subvention:,.0f} €** (Prime + TVA)".replace(",", " "))
+st.info(f"💰 Subvention globale calculée automatiquement : **{subvention:,.2f} €** (Prime + TVA)".replace(",", " "))
 
 st.divider()
 
@@ -154,9 +154,9 @@ def generer_pdf(date_dossier, adresse, subvention, prime, tva):
     mois_str = f"{MOIS_FR[date_dossier.month]} {date_dossier.year}"
     today = datetime.today()
     date_generation = f"{today.day} {MOIS_FR[today.month]} {today.year}"
-    sub_str  = f"{subvention:,.0f}".replace(",", " ")
-    prime_str = f"{prime:,.0f}".replace(",", " ")
-    tva_str  = f"{tva:,.0f}".replace(",", " ")
+    sub_str   = f"{subvention:,.2f}".replace(",", " ")
+    prime_str = f"{prime:,.2f}".replace(",", " ")
+    tva_str   = f"{tva:,.2f}".replace(",", " ")
 
     story = []
 
