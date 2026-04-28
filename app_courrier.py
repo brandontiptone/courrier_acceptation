@@ -151,7 +151,7 @@ def generer_pdf(date_dossier, adresse, subvention, prime, tva):
         9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
     }
     date_str = date_dossier.strftime("%d/%m/%Y")
-    mois_str = f"{MOIS_FR[date_dossier.month]} {date_dossier.year}"
+    mois_str = f"{date_dossier.day} {MOIS_FR[date_dossier.month]} {date_dossier.year}"
     today = datetime.today()
     date_generation = f"{today.day} {MOIS_FR[today.month]} {today.year}"
     sub_str   = f"{subvention:,.2f}".replace(",", " ")
